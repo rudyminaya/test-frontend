@@ -1,0 +1,21 @@
+.botoncito {
+    background-color: #fff;
+    color: #3c00ff;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: transparent;
+    transition: linear 150ms;
+    transform: translateY(0);
+    max-height: 50px;
+    grid-column-start: span 2;
+    max-width: 270px;
+    margin: 0 auto;
+}
+.botoncito:hover {
+    transform: translateY(-1px);
+    box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.479);
+}
