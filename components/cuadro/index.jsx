@@ -13,22 +13,23 @@ const Cuadro = () => {
         let enlace = ''
 
         if (nombre.length > 0 && apellido.length > 0) {
-            enlace = `http://localhost:5000/random/${nombre}/${apellido}`
+            enlace = `/api/random?nombre=${nombre}&apellido=${apellido}`
         } else {
-            enlace = 'http://localhost:5000/random'
+            enlace = '/api/random'
         }
 
         fetch(enlace)
             .then((res) => res.json())
             .then((data) => {
-                setResultado(`${data.nombre} ${data.correo} ${data.telefono}`)
+                setResultado(`${data.nombres} ${data.correo} ${data.telefono}`)
+                console.log(resultado)
             })
     }
 
     return (
         <form onSubmit={consulta} className={styles.contenedor}>
             <div className={styles.etiqueta}>
-                <label htmlFor="">Nombre</label>
+                <label htmlFor="nombre">Nombre</label>
                 <input
                     type="text"
                     id="nombre"
@@ -39,7 +40,7 @@ const Cuadro = () => {
                 />
             </div>
             <div className={styles.etiqueta}>
-                <label htmlFor="">Apellido</label>
+                <label htmlFor="apellido">Apellido</label>
                 <input
                     type="text"
                     id="apellido"
